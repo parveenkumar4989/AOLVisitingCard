@@ -26,7 +26,7 @@ h2{font:500 15px Hind,sans-serif;color:var(--muted);margin:0 0 10px}
 .ct{font-size:3cqw;line-height:1.6}
 .row{display:flex;justify-content:space-between;align-items:flex-end;gap:4cqw}
 .c1:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2.2cqw;background:linear-gradient(180deg,#f4b323,var(--deep))}
-.c1 .i{padding-left:8.5cqw}.c1 .prog{position:absolute;right:7cqw;top:6cqw;width:30cqw;text-align:right}.c1 .ct{text-align:right}
+.c1 .i{padding-left:8.5cqw}.c1 .prog{position:absolute;right:7cqw;top:6cqw;width:30cqw;text-align:right}.c1 .row>div{flex:none;white-space:nowrap}.c1 .ct{text-align:right}
 .c2{background:#fbf6ec}.c2 .i{align-items:center;text-align:center;justify-content:center;gap:1.2cqw}
 .c2 .logo{width:38cqw;margin-bottom:1cqw}.c2 .rule{width:12cqw;height:.5cqw;background:var(--sf);margin:.5cqw 0 1.5cqw}
 .c2 .name{font-size:7.5cqw}.c2 .line{display:flex;gap:2cqw;margin-top:3cqw;font-size:2.8cqw}.c2 .line span{color:var(--sf)}
@@ -43,10 +43,10 @@ h2{font:500 15px Hind,sans-serif;color:var(--muted);margin:0 0 10px}
 @page{size:3.5in 2in;margin:0}@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff;padding:0}h1,.note,.fields,.btns{display:none}.grid{max-width:none}.c{box-shadow:none;border-radius:0;width:3.5in;height:2in;aspect-ratio:auto}}</style></head><body><main>
 <h1>Visiting card maker · Art of Living Faculty</h1>
 <p class="note">Type your details below and the card updates. Download it as a PNG, or print it to PDF. Standard size 3.5 × 2 in.</p>
-<div class="fields"><label>Name<input data-i="n" value="Your Name"></label><label>Title<input data-i="t" value="Faculty, The Art of Living"></label><label>Phone<input data-i="p" value="+91 0000 0000"></label><label>Email<input data-i="e" value="name@email.com"></label><label>City<input data-i="l" value="Mysore"></label><label>Programs<input data-i="g" value="Happiness Program · Sudarshan Kriya · Meditation"></label></div>
+<div class="fields"><label>Name<input data-i="n" value="Your Name"></label><label>Title<input data-i="t" value="Faculty, The Art of Living"></label><label>Phone<input data-i="p" value="+91 00000 00000"></label><label>Email<input data-i="e" value="name@email.com"></label><label>City<input data-i="l" value="Mysore"></label><label>Programs<input data-i="g" value="Happiness Program · Sudarshan Kriya · Meditation"></label></div>
 <div class="grid"><section><div class="c c1"><div class="i"><div class="logo"></div><div class="prog" data-f="g">Happiness Program
 Sudarshan Kriya
-Meditation</div><div class="row"><div><div class="name" data-f="n">Your Name</div><div class="role" data-f="t">Faculty, The Art of Living</div></div><div class="ct"><div class="" data-f="p">+91 0000 0000</div><div class="" data-f="e">name@email.com</div><div class="" data-f="l">Mysore</div></div></div></div></div></section></div><div class="btns" style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap"><button id="png" style="font:500 15px Hind,sans-serif;padding:10px 18px;border-radius:8px;border:1px solid #e8871e;background:#e8871e;color:#fff;cursor:pointer">Download PNG (300 dpi)</button><button onclick="window.print()" style="font:500 15px Hind,sans-serif;padding:10px 18px;border-radius:8px;border:1px solid #e8871e;background:transparent;color:inherit;cursor:pointer">Print / Save as PDF</button></div><p class="note" style="margin-top:14px">Your details stay in your browser. Nothing you type here is sent anywhere. For PDF: click Print, choose Save as PDF, turn on Background graphics.</p></main><script>document.querySelectorAll('[data-i]').forEach(i=>{const u=()=>document.querySelectorAll('[data-f="'+i.dataset.i+'"]').forEach(x=>x.textContent=(i.dataset.i==="g"?i.value.split(/\s*·\s*/).join("\n"):i.value));i.addEventListener('input',u)});
+Meditation</div><div class="row"><div><div class="name" data-f="n">Your Name</div><div class="role" data-f="t">Faculty, The Art of Living</div></div><div class="ct"><div class="" data-f="p">+91 00000 00000</div><div class="" data-f="e">name@email.com</div><div class="" data-f="l">Mysore</div></div></div></div></div></section></div><div class="btns" style="margin-top:28px;display:flex;gap:10px;flex-wrap:wrap"><button id="png" style="font:500 15px Hind,sans-serif;padding:10px 18px;border-radius:8px;border:1px solid #e8871e;background:#e8871e;color:#fff;cursor:pointer">Download PNG (300 dpi)</button><button onclick="window.print()" style="font:500 15px Hind,sans-serif;padding:10px 18px;border-radius:8px;border:1px solid #e8871e;background:transparent;color:inherit;cursor:pointer">Print / Save as PDF</button></div><p class="note" style="margin-top:14px">Your details stay in your browser. Nothing you type here is sent anywhere. For PDF: click Print, choose Save as PDF, turn on Background graphics.</p></main><script>document.querySelectorAll('[data-i]').forEach(i=>{const u=()=>document.querySelectorAll('[data-f="'+i.dataset.i+'"]').forEach(x=>x.textContent=(i.dataset.i==="g"?i.value.split(/\s*·\s*/).join("\n"):i.value));i.addEventListener('input',u)});
 (async()=>{const btn=document.getElementById('png');
 const v=k=>document.querySelector('[data-i="'+k+'"]').value;
 btn.onclick=async()=>{try{
@@ -58,11 +58,22 @@ const u=getComputedStyle(document.documentElement).getPropertyValue('--logo').ma
 const im=new Image();im.src=u;await im.decode();const lw=31*q;x.drawImage(im,8.5*q,6*q,lw,lw*967/2287);
 x.textAlign='right';x.fillStyle='#6b6258';x.font='400 '+2.6*q+'px Hind,sans-serif';
 v('g').split(/\s*·\s*/).forEach((s,i)=>x.fillText(s,W-7*q,6*q+2.6*q*.85+i*2.6*q*1.5+2.6*q*.3));
-x.fillStyle='#2a2420';x.font='400 '+3*q+'px Hind,sans-serif';
-[v('p'),v('e'),v('l')].filter(Boolean).reverse().forEach((s,i)=>x.fillText(s,W-7*q,H-7.2*q-i*4.8*q));
-x.textAlign='left';x.fillStyle='#2a2420';x.font='600 '+8.4*q+'px "Cormorant Garamond",Georgia,serif';x.fillText(v('n'),8.5*q,H-12.3*q);
+let ns=8.4,cs=3;const cl=[v('p'),v('e'),v('l')].filter(Boolean);
+const mw=(f,s)=>{x.font=f;return x.measureText(s).width};
+const NF=()=>'600 '+ns*q+'px "Cormorant Garamond",Georgia,serif',CF=()=>'400 '+cs*q+'px Hind,sans-serif';
+const need=()=>Math.max(mw(NF(),v('n')),mw('500 '+3.3*q+'px Hind,sans-serif',v('t')))+Math.max(0,...cl.map(s=>mw(CF(),s)));
+while(need()>W-19.5*q&&ns>4.5)ns-=.2;while(need()>W-19.5*q&&cs>2.4)cs-=.1;
+x.fillStyle='#2a2420';x.font=CF();
+cl.reverse().forEach((s,i)=>x.fillText(s,W-7*q,H-7.2*q-i*4.8*q*cs/3));
+x.textAlign='left';x.fillStyle='#2a2420';x.font=NF();x.fillText(v('n'),8.5*q,H-12.3*q);
 x.fillStyle='#b85c10';x.font='500 '+3.3*q+'px Hind,sans-serif';x.fillText(v('t'),8.5*q,H-7.2*q);
 const b=await new Promise(r=>c.toBlob(r,'image/png'));
 const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='visiting-card.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
 }catch(e){alert('Could not create the PNG. Use Print / Save as PDF instead.')}}})();
+
+function fit(){const c=document.querySelector('.c'),r=c.querySelector('.row'),L=r.children[0],ct=r.querySelector('.ct'),n=r.querySelector('.name');const cw=c.clientWidth,q=cw/100,avail=cw-19.5*q;let f=8.4,s=3;n.style.fontSize=f*q+'px';ct.style.fontSize=s*q+'px';
+while(L.offsetWidth+ct.offsetWidth>avail&&f>4.5){f-=.2;n.style.fontSize=f*q+'px'}
+while(L.offsetWidth+ct.offsetWidth>avail&&s>2.4){s-=.1;ct.style.fontSize=s*q+'px'}}
+document.querySelectorAll('[data-i]').forEach(i=>i.addEventListener('input',fit));
+addEventListener('resize',fit);addEventListener('load',fit);if(document.fonts)document.fonts.ready.then(fit);fit();
 </script></body></html>
